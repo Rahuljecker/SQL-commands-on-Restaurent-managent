@@ -1,0 +1,14 @@
+create database project;
+use project;
+create table list_of_foods(beverage_items varchar(20), fast_foods varchar(20),res_id int not null);
+-- drop table list_of_foods;
+select *from list_of_foods;
+insert into list_of_foods(beverage_items,fast_foods,res_id) values('lassi','chowmin',101);
+insert into list_of_foods(beverage_items,fast_foods,res_id) values('cold_drinks','egg_roll',102);
+insert into list_of_foods(beverage_items,fast_foods,res_id) values('cold_coffee','biryani',105);
+insert into list_of_foods(beverage_items,fast_foods,res_id) values('masala_tea','noodles',107);
+insert into list_of_foods(fast_foods,res_id) values('fried_rice',104);
+-- alter table list_of_foods add column res_id int ;
+-- insert into list_of_foods(res_id) values(101);
+desc list_of_foods;
+alter table list_of_foods add foreign key list_of_foods(res_id) references restaurant(res_id);
